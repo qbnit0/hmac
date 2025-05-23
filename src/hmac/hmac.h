@@ -1,6 +1,6 @@
 #pragma once
 
-#include "hashfn.h"
+#include "hash/hash.h"
 
 char *hmac(
   HashFunction hash_fn,

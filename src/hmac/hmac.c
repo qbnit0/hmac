@@ -1,8 +1,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "hashfn.h"
-#include "util.h"
+#include "hash/hash.h"
+#include "util/util.h"
 #include "hmac.h"
 
 #define OUTER_PAD 0x5c
