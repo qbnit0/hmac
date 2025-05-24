@@ -26,10 +26,11 @@ static void blocksize_key(
 }
 
 
-char *hmac(
+void hmac(
   HashFunction hash_fn,
   char *key, size_t key_size,
-  char *message, size_t message_size
+  char *message, size_t message_size,
+  char *result
 ) {
   {
     char *k = key;
@@ -59,8 +60,6 @@ char *hmac(
   hash_fn.digest(inner_fragment, state);
 
   // Result
-  char *result = malloc(hash_fn.digest_size);
-
   state = alloca(hash_fn.state_size);
   hash_fn.init(state);
 
@@ -68,6 +67,4 @@ char *hmac(
   hash_fn.update(state, inner_fragment, hash_fn.digest_size);
 
   hash_fn.digest(result, state);
-
-  return result;
 }
