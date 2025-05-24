@@ -10,5 +10,5 @@ void to_hex(char *bytes, size_t size, char *output) {
     output[2 * i] = alphabet[nib1];
     output[2 * i + 1] = alphabet[nib2];
   }
-  output[2 * size + 1] = '\0';
+  output[2 * size] = '\0';
 }
