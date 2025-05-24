@@ -40,7 +40,7 @@ char *hmac(
   key_size = hash_fn.block_size; // Key now fits in block_size
 
   // Padding
-  char *key_opad = alloca(key_size); memcpy(key_opad, key, key_size);
+  char *key_opad = key;
   char *key_ipad = alloca(key_size); memcpy(key_ipad, key, key_size);
   for (int i = 0; i < key_size; i++) {
     key_opad[i] ^= OUTER_PAD;
